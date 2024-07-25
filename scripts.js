@@ -35,3 +35,7 @@ console.log(nameLengths);
 // Exercise 4: Sorting
 const sortedProvinces = [...provinces].sort(); // Copy array to avoid mutating the original
 console.log(sortedProvinces);
+
+// Exercise 5: Filtering Cape
+const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
+console.log(nonCapeProvinces.length);
