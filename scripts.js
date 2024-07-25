@@ -50,3 +50,35 @@ const nameProvinceMapping = names.reduce((acc, name, index) => {
   return acc;
 }, {});
 console.log(nameProvinceMapping);
+
+// Advanced Exercises (Single `console.log` Execution)
+
+// 1. Log Products
+console.log(products.forEach(product => console.log(product.product)));
+
+// 2. Filter by Name Length
+console.log(products.filter(product => product.product.length <= 5));
+
+// 3. Price Manipulation
+console.log(
+  products
+    .filter(product => product.price.trim() !== '')
+    .map(product => ({ ...product, price: Number(product.price) }))
+    .reduce((total, product) => total + product.price, 0)
+);
+
+// 4. Concatenate Product Names
+console.log(products.reduce((acc, product) => acc + product.product, ''));
+
+// 5. Find Extremes in Prices
+const validProducts = products.filter(product => product.price.trim() !== '').map(product => ({ ...product, price: Number(product.price) }));
+const highestPricedProduct = validProducts.reduce((max, product) => (product.price > max.price ? product : max), validProducts[0]);
+const lowPricedProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
+console.log(`Highest: ${highestPricedProduct.product}. Lowest: ${lowestPricedProduct.product}`);
+
+// 6. Object Transformation
+const transformedProducts = products.reduce((acc, { product, price }) => {
+  acc[product] = { name: product, cost: price };
+  return acc;
+}, {});
+console.log(transformedProducts);
