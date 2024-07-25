@@ -23,3 +23,7 @@ provinces.forEach(province => console.log(province));
 
 // Log each name with a matching province in the format "Name (Province)"
 names.forEach((name, index) => console.log(`${name} (${provinces[index]})`));
+
+// Exercise 2: Uppercase Transformation
+const uppercaseProvinces = provinces.map(province => province.toUpperCase());
+console.log(uppercaseProvinces);
