@@ -97,7 +97,9 @@ const styles = [
   'font-size: 20px'
 ].join(';');
 
-console.log('%c Welcome to My Awesome Script! ', styles);
+console.log('%c DJS06 ', styles);
 
-console.log('%cYour script is now running smoothly.', 'color: green; font-size: 16px; font-weight: bold;');
-console.log('%cThank you for using this script!', 'color: blue; font-size: 14px;');
+console.log('%cJs successfully loaded.', 'color: green; font-size: 16px; font-weight: bold;');
+console.log('%cCelso Charlez', 'color: blue; font-size: 14px;');
+
+// Small console log for coolness :)
