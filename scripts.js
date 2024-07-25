@@ -62,7 +62,7 @@ console.log(products.filter(product => product.product.length <= 5));
 // 3. Price Manipulation
 console.log(
   products
-    .filter(product => product.price.trim() !== '')
+    .filter(product => String(product.price).trim() !== '')
     .map(product => ({ ...product, price: Number(product.price) }))
     .reduce((total, product) => total + product.price, 0)
 );
@@ -71,7 +71,7 @@ console.log(
 console.log(products.reduce((acc, product) => acc + product.product, ''));
 
 // 5. Find Extremes in Prices
-const validProducts = products.filter(product => product.price.trim() !== '').map(product => ({ ...product, price: Number(product.price) }));
+const validProducts = products.filter(product => String(product.price).trim() !== '').map(product => ({ ...product, price: Number(product.price) }));
 const highestPricedProduct = validProducts.reduce((max, product) => (product.price > max.price ? product : max), validProducts[0]);
 const lowestPricedProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
 console.log(`Highest: ${highestPricedProduct.product}. Lowest: ${lowestPricedProduct.product}`);
@@ -82,3 +82,22 @@ const transformedProducts = products.reduce((acc, { product, price }) => {
   return acc;
 }, {});
 console.log(transformedProducts);
+
+const styles = [
+  'background: linear-gradient(#D33106, #571402)',
+  'border: 1px solid #3E0E02',
+  'color: white',
+  'display: block',
+  'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)',
+  'box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)',
+  'padding: 20px',
+  'line-height: 40px',
+  'text-align: center',
+  'font-weight: bold',
+  'font-size: 20px'
+].join(';');
+
+console.log('%c Welcome to My Awesome Script! ', styles);
+
+console.log('%cYour script is now running smoothly.', 'color: green; font-size: 16px; font-weight: bold;');
+console.log('%cThank you for using this script!', 'color: blue; font-size: 14px;');
