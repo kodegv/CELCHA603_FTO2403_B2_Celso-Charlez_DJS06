@@ -17,3 +17,6 @@ const products = [
 // Exercise 1: ForEach Basics
 // Log each name
 names.forEach(name => console.log(name));
+
+// Log each province
+provinces.forEach(province => console.log(province));
