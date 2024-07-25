@@ -73,7 +73,7 @@ console.log(products.reduce((acc, product) => acc + product.product, ''));
 // 5. Find Extremes in Prices
 const validProducts = products.filter(product => product.price.trim() !== '').map(product => ({ ...product, price: Number(product.price) }));
 const highestPricedProduct = validProducts.reduce((max, product) => (product.price > max.price ? product : max), validProducts[0]);
-const lowPricedProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
+const lowestPricedProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
 console.log(`Highest: ${highestPricedProduct.product}. Lowest: ${lowestPricedProduct.product}`);
 
 // 6. Object Transformation
