@@ -39,3 +39,7 @@ console.log(sortedProvinces);
 // Exercise 5: Filtering Cape
 const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
 console.log(nonCapeProvinces.length);
+
+// Exercise 6: Finding 'S'
+const containsS = names.map(name => name.includes('S'));
+console.log(containsS);
